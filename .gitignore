@@ -31,3 +31,25 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# dependencies
+/coin-react/node_modules
+/coin-react/.pnp
+/coin-react/.pnp.js
+
+# testing
+/coin-react//coverage
+
+# production
+/coin-react//build
+
+# misc
+/coin-react/.DS_Store
+/coin-react/.env.local
+/coin-react/.env.development.local
+/coin-react/.env.test.local
+/coin-react/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
