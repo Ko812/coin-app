@@ -1,10 +1,7 @@
 name: coin-workflow
 
 # trigger
-on:
-  push:
-    branches:
-      - "release/v[0-9]+.[0-9]+"
+on: push
 
 jobs:
   # name of your job
