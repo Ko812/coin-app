@@ -32,15 +32,15 @@ jobs:
         with:
           file: ${{github.workspace}}/${{github.ref_name}}/Dockerfile
           push: true
-          tags: ${{secrets.DOCKERHUBUSERNAME}}/go-fortune:${{github.sha}}
-      - name: Install Cosign
-        uses: sigstore/cosign-installer@v3.5.0
-      - name: Sign image with a key
-        run: |
-          cosign sign --key env://COSIGN_PRIVATE_KEY ${TAG}
-        env:
-          TAG: ${{secrets.DOCKERHUBUSERNAME}}/go-fortune@${{ steps.build-and-push.outputs.digest }}
-          COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
-          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
-          DIGEST: ${{ steps.build-and-push.outputs.digest }}
+          tags: ${{secrets.DOCKERHUBUSERNAME}}/coin-app:${{github.sha}}
+      # - name: Install Cosign
+      #   uses: sigstore/cosign-installer@v3.5.0
+      # - name: Sign image with a key
+      #   run: |
+      #     cosign sign --key env://COSIGN_PRIVATE_KEY ${TAG}
+      #   env:
+      #     TAG: ${{secrets.DOCKERHUBUSERNAME}}/go-fortune@${{ steps.build-and-push.outputs.digest }}
+      #     COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+      #     COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+      #     DIGEST: ${{ steps.build-and-push.outputs.digest }}
       
