@@ -20,6 +20,7 @@ import com.nusiss.javaspring.rest.entities.CoinQuery;
 import com.nusiss.javaspring.rest.entities.CoinResult;
 import com.nusiss.javaspring.rest.service.CoinService;
 
+
 @RestController
 @RequestMapping("/api")
 @CrossOrigin
@@ -41,18 +42,6 @@ public class RequestController {
 					.toList()
 					), 
 				HttpStatus.OK);
-	}
-	
-	@GetMapping("/findMinimumCoins")
-	public ResponseEntity<CoinResult> getMinimumCoins(CoinQuery query){
-		List<Double> result = cs.getMinimumCoins(query.getTargetAmount(), query.getCoinDenominators());
-		List<Coin> coins = new ArrayList<>();
-		double key = query.getTargetAmount();
-		for(Double d : result) {
-			key = key - d;
-			coins.add(new Coin(d));
-		}
-		return new ResponseEntity<CoinResult>(new CoinResult(coins), HttpStatus.OK);
 	}
 	
 }
