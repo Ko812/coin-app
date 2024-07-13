@@ -6,7 +6,7 @@ on: push
 jobs:
   # name of your job
   Build-Coin-Sign-And-Notify:
-    runs-on: fedora-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         id: Checkout-step
